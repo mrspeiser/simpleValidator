@@ -12,46 +12,44 @@
 	<p>Goodbye World!</p>
 	<form class="form ">
 	<input type="password" class="form-control" name="password" id="password">
-	<button style="margin-top: 20px;" type="submit" class="btn btn-submit " name="submit">Submit</button> 
+	<button style="margin-top: 20px;" type="submit" class="btn btn-submit " name="submit" disabled="">Submit</button> 
 	</form>
 	<div ><h4 class="displayPass"></h4></div>
 	<div ><h4 class="displayValidation"></h4></div>
+	<div ><h4 class="displayValidation2"></h4></div>
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
+
 (function(){
 	
 	var Validator = {
 		textString : "Password111",
+		lessThan6Char : "Your password needs at least 6 characters!",
+		noNumberWarn : "Your password needs at least 1 number!",
+		passwordValidated : "Your password is OK",
+
 		displayText : function(){
 			$('#password').on('keyup', function(e){
 				var txtInput = $(this).val();
-				console.log(txtInput);
-				$(".displayPass").text(txtInput);
-		       	if(txtInput.match(/^([a-z0-9]{6,})$/)){
-		       		alert('it matches!');
+				// console.log(txtInput);
+				// $(".displayPass").text(txtInput);
+		       	if(txtInput.length > 5 && txtInput.match(/\d/)){
+		       		$('.displayValidation').text(Validator.passwordValidated);
+		       		$('.displayValidation2').text(Validator.passwordValidated);
+		       		$(':input[type="submit"]').prop('disabled', false);
+		       	} else {
+		       		$(".displayValidation").text(Validator.lessThan6Char);
+		       		$(".displayValidation2").text(Validator.noNumberWarn);
+		       		
 		       	}
 		    });
-		},
-		
-		noNumberWarn : "Your password needs at least 1 number!",
-		lessThan6Char : "Your password needs at least 6 characters!",
-		passwordValidated : "Your password is OK"
-
-	}
-
-	Validator.displayText();
-
-
-
-
-
-
+		}
+}
+Validator.displayText();
 })();
-
-
 </script>
 
 </body>
