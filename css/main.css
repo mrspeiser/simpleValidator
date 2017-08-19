@@ -28,6 +28,20 @@ p {
 	padding: 0;
 }
 
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+.submitBtn {
+	transform: all;
+}
+
+
+
 .form-div {
 	margin: 0 auto;
 	width: 400px;
@@ -36,7 +50,6 @@ p {
 	padding: 15px;
 	box-shadow: 4px 5px 21px -2px;
 	margin-top: 20px;
-	/*animation: triggerForwards 3s ease-in-out 0s 1 normal forwards;*/
 	
 }
 
@@ -53,14 +66,17 @@ p {
 	transition: all;
 }
 
-.trigger:hover {
-	scale()
-}
+
 
 .form {
-	transition: all;
-	display: none;
+	
+	opacity: 0;
+	height: 0;
 
+}
+
+.showForm {
+	animation: showForm 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1.5s 1 normal forwards;
 }
 
 .triggerForwards {
@@ -72,17 +88,11 @@ p {
 	animation: triggerBackwards 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s 1 normal forwards;
 }
 
-.red {
-	color: red;
+.hideButtons {
+	animation: hideButtons 3s ease-in-out 0s 1 normal forwards;
+	
 }
 
-.green {
-	color: green;
-}
-
-.submitBtn {
-	transform: all;
-}
 
 
 @keyframes triggerForwards {
@@ -94,12 +104,15 @@ p {
 		border-radius: 50%;
 		width: 150px;
 		height: 150px;
+		box-shadow: 0;
+		
 	}
 
 
 	100% {
 		transform: rotate(720deg);
-		border-radius: 0%;
+		
+		height: 335px;
 	}
 }
 
@@ -108,16 +121,46 @@ p {
 		
 	}
 
-	40%, 60% {
+	40%, 70% {
 	border-radius: 50%;
 	width: 150px;
 	height: 150px;
+
+	}
+	80% {
+	transform: rotate(-720deg);
 	}
 
 	100% {
-		transform: rotate(-720deg);
+	
 	}
 }
+
+@keyframes hideButtons {
+	0% {
+
+	}
+	50%, 100% {
+		opacity: 0;
+		height: 0px;
+	}
+}
+
+
+@keyframes showForm {
+	0%, 10% {
+		height: 0px;
+	}
+	90%, 100% {
+		height: initial;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+
+
+
 
 
 
