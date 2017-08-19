@@ -26,15 +26,30 @@
 	
 	<div class="form-div">
 
+	<button class="trigger sign-in">Sign In</button>
+	<button class="trigger sign-up">Sign Up</button>
+
+
+
+
+
+
 		<form class="form ">
 		<h1>Sign Up</h1>
-		<input type="password" class="form-control" name="password" id="password">
-		<button style="margin-top: 20px;" type="submit" class="btn btn-submit " name="submit" disabled="">Submit</button> 
+
+		<label>Username</label>
+		<input type="text" class="form-control" name="username" placeholder="Username">
+		<label>E-mail</label>
+		<input type="text" class="form-control" name="email" placeholder="name@provider.com">
+		<label>Password</label>
+		<input type="password" class="form-control" name="password" id="password" placeholder="Password">
+		<span><p class="red displayPass"></p></span>
+		<span><p class="red displayValidation"></p></span>
+		<span><p class="red displayValidation2"></p></span>
+		<button style="margin-top: 20px;" type="submit" class=" btn btn-primary " name="submit" disabled="">Submit</button> 
 		</form>
 	</div>
-	<div ><h4 class="displayPass"></h4></div>
-	<div ><h4 class="displayValidation"></h4></div>
-	<div ><h4 class="displayValidation2"></h4></div>
+
 
 </div>
 

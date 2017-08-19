@@ -13,8 +13,10 @@ var Validator = {
 			// console.log(txtInput);
 			// $(".displayPass").text(txtInput);
 	       	if(txtInput.length > 5 && txtInput.match(/\d/)){
+	       		$('.displayValidation').removeClass('red');
+	       		$('.displayValidation').addClass('green');
 	       		$('.displayValidation').text(Validator.passwordValidated);
-	       		$('.displayValidation2').text(Validator.passwordValidated);
+	       		$('.displayValidation2').parent().remove();
 	       		$(':input[type="submit"]').prop('disabled', false);
 	       	} else {
 	       		$(".displayValidation").text(Validator.lessThan6Char);
@@ -26,6 +28,24 @@ var Validator = {
 }
 Validator.displayText();
 
+$('.sign-in').on('click', function(){
+	$('.form-div').addClass('triggerForwards'); 
+	$('.form-div').on('animationend webkitAnimationEnd oAnimationEnd',
+    function() {
+        $('.form-div').removeClass("triggerForwards");
+	    }
+	);
+});
+
+
+$('.sign-up').on('click', function(){
+	$('.form-div').addClass('triggerBackwards');
+	$('.form-div').on('animationend webkitAnimationEnd oAnimationEnd',
+    function() {
+        $('.form-div').removeClass("triggerBackwards");
+	    }
+	);
+});
 
 
 })();
