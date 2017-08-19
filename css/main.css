@@ -9,3 +9,21 @@ body {
   padding: 0;
 }
 
+header {
+	height: 80px;
+	width: 100%;
+	background: yellow;
+}
+
+.firstWrapper {
+	padding: 0;
+}
+
+.form-div {
+	margin: 0 auto;
+	width: 400px;
+	background: white;
+	border: 1px solid #d1d1d1;
+	padding: 15px;
+	box-shadow: 4px 5px 21px -2px;
+}
