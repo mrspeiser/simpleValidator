@@ -32,12 +32,25 @@ $('.sign-in').on('click', function(){
 	$('.form-div').addClass('triggerForwards');
 	$('.buttons').addClass('hideButtons'); 
 	$('.form').addClass('showForm');
+
+// if you want to remove the animation class after the animation finishes include these lines:
+//
+//
+//
+//
+//
+// here:
+
+
 	// $('.form-div').on('animationend webkitAnimationEnd oAnimationEnd',
  //    function() {
  //        $('.form-div').removeClass("triggerForwards");
  //        $
 	//     }
 	// );
+
+
+	// to here
 });
 
 
