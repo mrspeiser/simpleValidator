@@ -32,12 +32,12 @@ $('.sign-in').on('click', function(){
 	$('.form-div').addClass('triggerForwards');
 	$('.buttons').addClass('hideButtons'); 
 	$('.form').addClass('showForm');
-	$('.form-div').on('animationend webkitAnimationEnd oAnimationEnd',
-    function() {
-        $('.form-div').removeClass("triggerForwards");
-        $
-	    }
-	);
+	// $('.form-div').on('animationend webkitAnimationEnd oAnimationEnd',
+ //    function() {
+ //        $('.form-div').removeClass("triggerForwards");
+ //        $
+	//     }
+	// );
 });
 
 
